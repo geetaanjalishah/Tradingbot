@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import WalletList from './components/WalletList';
 import TradeForm from './components/TradeForm';

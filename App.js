@@ -28,4 +28,16 @@ io.on('connection', (socket) => {
   });
 });
 
+
+const emitTransactionNotification = async () => {
+  try {
+    const recentTransaction = await Transaction.findOne().sort({ timestamp: -1 }).limit(1);
+    if (recentTransaction) {
+      io.emit('transactionNotification', recentTransaction);
+    }
+  } catch (err) {
+    console.error('Error emitting transaction notification:', err);
+  }
+};
+
 server.listen(5000, () => console.log("server is running on port 5000"));

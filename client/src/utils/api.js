@@ -8,7 +8,7 @@ export const fetchWallets = async () => {
     return response.data;
   } catch (err) {
     console.error('Error fetching wallets:', err);
-    throw err; // Re-throw for error handling in components
+    throw err; 
   }
 };
 
@@ -18,15 +18,12 @@ export const fetchWalletTransactions = async (walletAddress) => {
     return response.data;
   } catch (err) {
     console.error('Error fetching transactions:', err);
-    throw err; // Re-throw for error handling in components
+    throw err; 
   }
 };
 
-// Add more API call functions as needed:
 
 export const initiateTrade = async (amount, timeout) => {
-  // Implement logic for initiating a trade with amount and timeout
-  // This might involve additional data or authentication depending on your backend
   try {
     const response = await axios.post(`${baseUrl}/trades`, {
       amount,
@@ -35,8 +32,7 @@ export const initiateTrade = async (amount, timeout) => {
     return response.data;
   } catch (err) {
     console.error('Error initiating trade:', err);
-    throw err; // Re-throw for error handling in components
+    throw err; 
   }
 };
 
-// ... (other API calls)
