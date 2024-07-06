@@ -1,0 +1,19 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .collection-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .collection-item span {
+    font-weight: 600;
+  }
+  
