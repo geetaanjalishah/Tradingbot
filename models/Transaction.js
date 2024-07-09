@@ -1,10 +1,9 @@
-// models/Transaction.js
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const transactionSchema = new Schema({
-  walletAddress: {
-    type: String,
+const transactionSchema = new mongoose.Schema({
+  wallet: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Wallet',
     required: true
   },
   token: {

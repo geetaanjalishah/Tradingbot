@@ -19,14 +19,17 @@ const Notifications = () => {
   }, []);
 
   return (
-    <div>
-      <ul>
-        {notifications.map((notification) => (
-          <li key={notification._id}>
-            {notification.token} - {notification.amount}
-          </li>
-        ))}
-      </ul>
+    <div className="card">
+      <div className="card-content">
+        <span className="card-title">Notifications</span>
+        <ul className="collection">
+          {notifications.map((notification) => (
+            <li key={notification._id} className="collection-item">
+              {notification.token} - {notification.amount}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

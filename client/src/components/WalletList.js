@@ -1,8 +1,7 @@
-// src/components/WalletList.js
 import React, { useState, useEffect } from 'react';
 import { fetchWallets } from '../utils/api';
 
-const WalletList = () => {
+const WalletList = ({ onSelectWallet }) => {
   const [wallets, setWallets] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,6 +21,10 @@ const WalletList = () => {
     getWallets();
   }, []);
 
+  const handleClick = (walletAddress) => {
+    onSelectWallet(walletAddress);
+  };
+
   return (
     <div className="card">
       <div className="card-content">
@@ -31,7 +34,11 @@ const WalletList = () => {
         ) : (
           <ul className="collection">
             {wallets.map((wallet) => (
-              <li key={wallet.address} className="collection-item">
+              <li 
+                key={wallet.address} 
+                className="collection-item" 
+                onClick={() => handleClick(wallet.address)}
+              >
                 {wallet.address} (Hero Token: {wallet.heroBalance})
               </li>
             ))}
